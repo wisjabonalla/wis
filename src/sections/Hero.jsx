@@ -114,7 +114,7 @@ export const Hero = () => {
                         </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                            Hi, I'm Luis Jabonalla - I specialize in Web Development and Graphic Design. Creating modern, intuitive interfaces and visually engaging digital experiences.
+                            Hi, I’m Luis Jabonalla — a Web Developer and Graphic Designer focused on crafting modern, intuitive interfaces and visually engaging digital experiences.
                         </p>
                     </div>
 

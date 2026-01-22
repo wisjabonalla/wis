@@ -1,0 +1,32 @@
+import { Download } from "lucide-react";
+
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "/Luis M. Jabonalla-CV.pdf";
+  link.download = "Luis M. Jabonalla-CV.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+export const AnimatedBorderButtonMobile = () => {
+  return (
+    <button
+      onClick={handleDownload}
+      className="relative bg-transparent border border-border 
+        text-foreground hover:border-primary/50 transition-all 
+        duration-500 focus:outline-none focus-visible:ring-2 
+        focus-visible:ring-primary focus-visible:ring-offset-2 
+        disabled:opacity-50 disabled:cursor-not-allowed group 
+        px-8 py-4 text-lg font-medium rounded-full overflow-visible 
+        hover:cursor-pointer
+        animated-border"
+    >
+
+        <span className="relative z-10 flex items-center justify-center gap-2">
+            <Download className="w-5 h-5"/>
+            Download CV
+        </span>
+    </button>
+    );
+};

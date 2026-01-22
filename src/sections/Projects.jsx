@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Fullscreen, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Fullscreen, Link2, X } from "lucide-react";
 
 const categories = ["all", "websites", "graphics", "thumbnails"];
 
@@ -257,21 +257,25 @@ const totalSlides = Math.ceil(filteredProjects.length / itemsPerView);
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 pointer-events-none" />
 
           {/* Overlay link */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <button
-              onClick={() => {
-                if (project.category === "graphics" || project.category === "thumbnails") {
-                  setSelectedProject(project);
-                } else {
-                  window.open(project.link, "_blank");
-                }
-              }}
-              className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
-            >
-              <Fullscreen className="w-5 h-5" />
-            </button>
+<div className="absolute inset-0 flex items-end justify-end m-4 transition-opacity duration-300 pointer-events-none">
+  <button
+    onClick={() => {
+      if (project.category === "graphics" || project.category === "thumbnails") {
+        setSelectedProject(project);
+      } else {
+        window.open(project.link, "_blank");
+      }
+    }}
+    className="p-3 rounded-full glass-strong hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
+  >
+    {project.category === "graphics" || project.category === "thumbnails" ? (
+      <Fullscreen className="w-5 h-5" />
+    ) : (
+      <Link2 className="w-5 h-5" />
+    )}
+  </button>
+</div>
 
-          </div>
         </div>
 
         {/* Content */}

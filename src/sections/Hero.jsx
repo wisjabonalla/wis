@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Linkedin, MailIcon, PhoneIcon } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { AnimatedBorderButtonMobile } from "@/components/AnimatedBorderButtonMobile";
 
 import {
   SiHtml5,
@@ -92,7 +93,8 @@ export const Hero = () => {
 
         {/* Content */}
         <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Web View */}
+            <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Text Content */}
                 <div className="space-y-8">
                     <div className="animate-fade-in">
@@ -104,13 +106,11 @@ export const Hero = () => {
 
                     {/* Headline */}
                     <div className="space-y-4">
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                        Designing <span className="text-primary glow-text">digital</span>
-                        <br />
-                        experiences with
-                        <br />
-                        <span className="font-serif italic font-normal text-white">
-                        purpose.
+                        <h1 className="text-5xl md:text-5xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+                        Designing <span className="text-primary glow-text"> digital </span>
+                         experiences with 
+                        <span className="font-serif italic font-normal text-white"> 
+                        {" "} purpose.
                         </span>
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
@@ -166,6 +166,83 @@ export const Hero = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            {/* Mobile View */}
+            <div className="grid md:hidden lg:hidden items-center">
+                {/* Left Column - Text Content */}
+                <div className="space-y-4">
+                    <div className="animate-fade-in">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass animated-border transition-all duration-500 text-sm text-primary">
+                            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                                Web Developer • Graphic Designer
+                        </span>
+                    </div>
+                    {/* Headline */}
+                    <div>
+                        <h1 className="text-center text-xl mb-8 font-bold leading-tight animate-fade-in animation-delay-100">
+                        Designing <span className="text-primary glow-text">digital experiences </span>
+                         with {""}
+                        <span className="font-serif italic font-normal text-white">
+                            purpose.
+                        </span>
+                        </h1>
+                    </div>
+                        <div className="relative animate-fade-in animation-delay-300">
+                        {/* Profile Image */}
+                        <div className="relative max-w-md mx-auto">
+                            <div
+                                className="absolute inset-0
+                            rounded-3xl bg-gradient-to-br
+                            from-primary/30 via-transparent
+                            to-primary/10 blur-2xl animate-pulse"
+                            />
+                            <div className="relative glass rounded-3xl p-2 glow-border">
+                                <img src="profile-photo.jpg" alt="Luis Jabonalla" className="w-full aspect-[4/5] object-cover rounded-2xl duration-500 hover:scale-101" />
+                                
+                                {/* Floating Badge */}
+                                <div className="absolute -bottom-4 -right-4 glass animated-border transition-all duration-500 rounded-xl px-4 py-3 animate-float">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                                        <span className="text-sm font-medium">Available for work</span>
+                                    </div>
+                                </div>
+                                {/* Stats Badge */}
+                                <div className="absolute -top-4 -left-4 glass animated-border transition-all duration-500 rounded-xl px-4 py-3 animate-float animation-delay-500">
+                                    <div className="text-2xl font-bold text-primary">2+</div>
+                                    <div className="text-xs text-muted-foreground">Years Exp.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-6">
+                        <p className="text-lg text-center text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                            Hi, I'm Luis Jabonalla - I specialize in Web Development and Graphic Design. Creating modern, intuitive interfaces and visually engaging digital experiences.
+                        </p>
+
+                        {/* CTAs */}
+                        <div className="grid gap-4 animate-fade-in animation-delay-300">
+                            <Button as="a" href="#contact" size="lg">
+                            Contact Me <ArrowRight className="w-5 h-5" />
+                            </Button>
+                            <AnimatedBorderButtonMobile />
+                        </div>
+
+                        {/* Social Links */}
+                        <div className="flex justify-center items-center gap-4 animate-fade-in animation-delay-400">
+                        {[
+                            { icon: MailIcon, href: "mailto:wisjabonalla@gmail.com" },
+                            { icon: PhoneIcon, href: "tel:+639196475555" },
+                            { icon: Linkedin, href: "https://www.linkedin.com/in/luis-jabonalla-730826392/" },
+                        ].map((social, idx) => (
+                            <a key={idx} href={social.href} className="p-2 rounded-full glass hover:bg-primary/15 hover:text-primary transition-all duration-300">
+                                {<social.icon className="w-5 h-5"/>}
+                            </a>
+                        ))}
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

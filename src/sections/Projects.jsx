@@ -266,7 +266,7 @@ const totalSlides = Math.ceil(filteredProjects.length / itemsPerView);
         window.open(project.link, "_blank");
       }
     }}
-    className="p-3 rounded-full glass-strong hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
+    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
   >
     {project.category === "graphics" || project.category === "thumbnails" ? (
       <Fullscreen className="w-5 h-5" />

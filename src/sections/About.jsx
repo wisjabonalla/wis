@@ -110,7 +110,7 @@ export const About = () => {
             </div>
 
             {/* Certifications Section */}
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="grid lg:grid-cols-3 gap-6 mt-8">
             {certifications.map((cert, idx) => (
                 <div
                     key={idx}

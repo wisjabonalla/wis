@@ -217,7 +217,7 @@ export const Hero = () => {
                     </div>
 
                     <div className="space-y-6">
-                        <p className="text-center text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                        <p className="text-center mx-auto text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                             Hi, I'm Luis Jabonalla - I specialize in Web Development and Graphic Design. Creating modern, intuitive interfaces and visually engaging digital experiences.
                         </p>
 

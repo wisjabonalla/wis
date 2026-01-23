@@ -140,7 +140,7 @@ export const About = () => {
                         onClick={() => setSelectedCert(cert)}
                         className="text-center cursor-pointer flex gap-1 items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-sm font-medium"
                         >
-                        View <Eye className="w-4 h-4"/>
+                        <Eye className="w-4 h-4"/> View
                         </button>
 
                         <a
@@ -149,7 +149,7 @@ export const About = () => {
                         rel="noopener noreferrer"
                         className="text-center flex gap-1 items-center px-4 py-2 text-primary rounded-lg bg-primary/10 hover:bg-primary/20 duration-500 text-sm font-medium"
                         >
-                        Verify <SquareArrowOutUpRight className="w-4 h-4"/> 
+                        <SquareArrowOutUpRight className="w-4 h-4"/> Verify
                         </a>
                     </div>
                     </div>

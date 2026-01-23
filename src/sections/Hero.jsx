@@ -92,7 +92,7 @@ export const Hero = () => {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+        <div className="container mx-auto px-6 pt-22 md:pt-32 pb-20 relative z-10">
             {/* Web View */}
             <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Text Content */}
@@ -217,14 +217,14 @@ export const Hero = () => {
                     </div>
 
                     <div className="space-y-6">
-                        <p className="text-lg text-center text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                        <p className="text-center text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                             Hi, I'm Luis Jabonalla - I specialize in Web Development and Graphic Design. Creating modern, intuitive interfaces and visually engaging digital experiences.
                         </p>
 
                         {/* CTAs */}
                         <div className="grid gap-4 animate-fade-in animation-delay-300">
                             <Button as="a" href="#contact" size="lg">
-                            Contact Me <ArrowRight className="w-5 h-5" />
+                            Contact Me
                             </Button>
                             <AnimatedBorderButtonMobile />
                         </div>

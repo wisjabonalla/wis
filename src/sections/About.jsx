@@ -122,7 +122,10 @@ export const About = () => {
                     <img
                     src={cert.logo}
                     alt={`${cert.title} logo`}
-                    className="w-20 h-20 object-contain rounded-lg"
+                    className="w-20 h-20 object-contain rounded-lg no-save"
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    onTouchStart={(e) => e.preventDefault()}
                     />
 
                     {/* Info + Buttons */}

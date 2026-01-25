@@ -17,7 +17,8 @@ import {
   SiAdobepremierepro,
   SiBootstrap,
   SiGithub,
-  SiGit
+  SiGit,
+  SiPhp
 } from "react-icons/si";
 
 const skillGroups = [
@@ -27,6 +28,7 @@ const skillGroups = [
       { name: "HTML", icon: SiHtml5, years: "3+ years", level: "Expert", progress: 90 },
       { name: "CSS", icon: SiCss3, years: "3+ years", level: "Expert", progress: 90 },
       { name: "JavaScript", icon: SiJavascript, years: "3+ years", level: "Advanced", progress: 85 },
+      { name: "PHP", icon: SiPhp, years: "3+ years", level: "Advanced", progress: 83 },
       { name: "WordPress", icon: SiWordpress, years: "2+ years", level: "Advanced", progress: 87 },
       { name: "React.js", icon: SiReact, years: "1+ years", level: "Intermediate", progress: 75 },
       { name: "Tailwind CSS", icon: SiTailwindcss, years: "2+ years", level: "Expert", progress: 92 },
@@ -99,7 +101,7 @@ export const Skills = () => {
         </div>
 
         {/* Skill Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {skillGroups.map((group, i) => (
             <div
               key={i}

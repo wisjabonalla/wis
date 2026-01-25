@@ -180,7 +180,10 @@ export const About = () => {
                 <img
                 src={selectedCert.image}
                 alt={selectedCert.title}
-                className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+                className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl no-save"
+                draggable={false}
+                onDragStart={(e) => e.preventDefault()}
+                onTouchStart={(e) => e.preventDefault()}
                 />
             </div>
             </div>

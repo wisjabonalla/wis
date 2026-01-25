@@ -150,7 +150,14 @@ export const Hero = () => {
                         to-primary/10 blur-2xl animate-pulse"
                         />
                         <div className="relative glass rounded-3xl p-2 glow-border">
-                            <img src="profile-photo.jpg" alt="Luis Jabonalla" className="w-full aspect-[4/5] object-cover rounded-2xl duration-500 hover:scale-101" />
+                            <img 
+                            src="profile-photo.jpg" 
+                            alt="Luis Jabonalla" 
+                            className="w-full aspect-[4/5] object-cover rounded-2xl duration-500 hover:scale-101 no-save" 
+                            draggable={false}
+                            onDragStart={(e) => e.preventDefault()}
+                            onTouchStart={(e) => e.preventDefault()}
+                            />
                             
                             {/* Floating Badge */}
                             <div className="absolute -bottom-4 -right-4 glass animated-border transition-all duration-500 rounded-xl px-4 py-3 animate-float">
@@ -198,7 +205,14 @@ export const Hero = () => {
                             to-primary/10 blur-2xl animate-pulse"
                             />
                             <div className="relative glass rounded-3xl p-2 glow-border">
-                                <img src="profile-photo.jpg" alt="Luis Jabonalla" className="w-full aspect-[4/5] object-cover rounded-2xl duration-500 hover:scale-101" />
+                                <img 
+                                src="profile-photo.jpg" 
+                                alt="Luis Jabonalla" 
+                                className="w-full aspect-[4/5] object-cover rounded-2xl duration-500 hover:scale-101 no-save" 
+                                draggable={false}
+                                onDragStart={(e) => e.preventDefault()}
+                                onTouchStart={(e) => e.preventDefault()}
+                                />
                                 
                                 {/* Floating Badge */}
                                 <div className="absolute -bottom-4 -right-4 glass animated-border transition-all duration-500 rounded-xl px-4 py-3 animate-float">

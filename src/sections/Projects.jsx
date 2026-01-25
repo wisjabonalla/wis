@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Fullscreen, Link2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Fullscreen, Globe, Link2, Palette, Target, X } from "lucide-react";
+import { SiYoutube } from "react-icons/si";
 
-const categories = ["all", "websites", "graphics", "thumbnails"];
+const categories = [
+  { name: "all", icon: Target },
+  { name: "websites", icon: Globe },
+  { name: "graphics", icon: Palette },
+  { name: "thumbnails", icon: SiYoutube },
+];
+
 
 const projects = [
     {
@@ -187,25 +194,30 @@ const totalSlides = Math.ceil(filteredProjects.length / itemsPerView);
                     </p>
                 </div>
 
-                <div className="flex justify-center gap-3 mb-12 flex-wrap">
-                {categories.map(cat => (
+                <div className="flex justify-center gap-2 md:gap-3 mb-12 flex-wrap">
+                {categories.map(cat => {
+                  const Icon = cat.icon;
+                  return (
                     <button
-                    key={cat}
-                    onClick={() => {
-                        setActiveCategory(cat);
+                      key={cat.name}
+                      onClick={() => {
+                        setActiveCategory(cat.name);
                         setCurrentIndex(0);
-                    }}
-                    className={`text-sm px-4 py-2 glass rounded-full border transition-all capitalize cursor-pointer md:text-base md:px-6 md:py-2 
-                        ${
-                        activeCategory === cat
+                      }}
+                      className={`text-sm px-3 py-2 md:text-base md:px-6 md:py-2 glass rounded-full border transition-all capitalize cursor-pointer 
+                        ${activeCategory === cat.name
                             ? "bg-primary text-primary-foreground border-primary"
                             : "text-muted-foreground animated-border border border-transparent hover:border-primary/50 hover:text-primary transition-all duration-300"
                         }`}
                     >
-                    {cat}
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <Icon className="w-4 h-4" />
+                        <span>{cat.name}</span>
+                      </div>
                     </button>
-                ))}
-                </div>
+                  )
+                })}
+              </div>
 
 {/* Carousel container */}
 <div className="relative">

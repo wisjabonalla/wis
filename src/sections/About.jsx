@@ -1,5 +1,6 @@
-import { Code2, Rocket, Users, Lightbulb, SquareArrowOutUpRight, ViewIcon, Eye, X } from "lucide-react";
+import { Code2, Users, SquareArrowOutUpRight, Eye, X, Palette } from "lucide-react";
 import { useState } from "react";
+import { BiMobile } from "react-icons/bi";
 
 const certifications = [
   {
@@ -32,27 +33,27 @@ const certifications = [
 const highlights = [
   {
     icon: Code2,
-    title: "Clean, Maintainable Code",
+    title: "Web Development",
     description:
       "Building scalable and efficient web applications using frameworks like React and Tailwind CSS.",
   },
   {
-    icon: Rocket,
-    title: "Optimized Performance",
+    icon: Palette,
+    title: "Graphic & UI Design",
     description:
-      "Ensuring fast, responsive websites with smooth animations, optimized assets, and best coding practices.",
+      "Applying graphic design and UX principles to craft visually engaging, intuitive, and on-brand interfaces.",
+  },
+  {
+    icon: BiMobile,
+    title: "Responsive Design",
+    description:
+      "Creating fully responsive websites with smooth animations, optimized assets, and best coding practices.",
   },
   {
     icon: Users,
     title: "Collaboration",
     description:
       "Working closely with clients and teams to turn ideas into polished, user-friendly digital experiences.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Creative Design Thinking",
-    description:
-      "Merging graphic design and UX principles to craft visually engaging and intuitive interfaces.",
   },
 ];
 

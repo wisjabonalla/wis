@@ -18,40 +18,42 @@ import {
   SiBootstrap,
   SiGithub,
   SiGit,
-  SiPhp
+  SiPhp,
+  SiPhotopea
 } from "react-icons/si";
 
 const skillGroups = [
   {
-    title: "Web Development",
+    title: "Frontend Development",
     skills: [
       { name: "HTML", icon: SiHtml5, years: "3+ years", level: "Expert", progress: 90 },
       { name: "CSS", icon: SiCss3, years: "3+ years", level: "Expert", progress: 90 },
       { name: "JavaScript", icon: SiJavascript, years: "3+ years", level: "Advanced", progress: 85 },
-      { name: "PHP", icon: SiPhp, years: "3+ years", level: "Advanced", progress: 83 },
-      { name: "WordPress", icon: SiWordpress, years: "2+ years", level: "Advanced", progress: 87 },
-      { name: "React.js", icon: SiReact, years: "1+ years", level: "Intermediate", progress: 75 },
+      { name: "React.js", icon: SiReact, years: "1+ year", level: "Intermediate", progress: 75 },
       { name: "Tailwind CSS", icon: SiTailwindcss, years: "2+ years", level: "Expert", progress: 92 },
       { name: "Bootstrap", icon: SiBootstrap, years: "2+ years", level: "Expert", progress: 92 },
     ],
   },
   {
-    title: "Graphic Design",
+    title: "Backend, CMS & Tooling",
+    skills: [
+      { name: "PHP", icon: SiPhp, years: "3+ years", level: "Advanced", progress: 83 },
+      { name: "WordPress", icon: SiWordpress, years: "2+ years", level: "Advanced", progress: 87 },
+      { name: "Git", icon: SiGit, years: "1+ year", level: "Advanced", progress: 88 },
+      { name: "GitHub", icon: SiGithub, years: "1+ year", level: "Advanced", progress: 88 },
+      { name: "Vercel", icon: SiVercel, years: "1+ year", level: "Advanced", progress: 80 },
+      { name: "Vite", icon: SiVite, years: "1+ year", level: "Intermediate", progress: 75 },
+    ],
+  },
+  {
+    title: "Design & Media",
     skills: [
       { name: "Adobe Photoshop", icon: SiAdobephotoshop, years: "10+ years", level: "Expert", progress: 95 },
       { name: "Adobe Premiere Pro", icon: SiAdobepremierepro, years: "5+ years", level: "Advanced", progress: 85 },
       { name: "Canva", icon: SiCanva, years: "5+ years", level: "Expert", progress: 90 },
-      { name: "Figma", icon: Figma, years: "1+ years", level: "Intermediate", progress: 70 },
-    ],
-  },
-  {
-    title: "Tools & Others",
-    skills: [
-      { name: "GitHub", icon: SiGithub, years: "1+ years", level: "Advanced", progress: 88 },
-      { name: "Git", icon: SiGit, years: "1+ years", level: "Advanced", progress: 88 },
+      { name: "Photopea", icon: SiPhotopea, years: "3+ years", level: "Expert", progress: 95 },
+      { name: "Figma", icon: Figma, years: "1+ year", level: "Intermediate", progress: 70 },
       { name: "Responsive Design", icon: Smartphone, years: "3+ years", level: "Expert", progress: 92 },
-      { name: "Vercel", icon: SiVercel, years: "1+ years", level: "Advanced", progress: 80 },
-      { name: "Vite", icon: SiVite, years: "1+ year", level: "Intermediate", progress: 75 },
     ],
   },
 ];

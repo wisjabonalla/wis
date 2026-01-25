@@ -219,160 +219,165 @@ const totalSlides = Math.ceil(filteredProjects.length / itemsPerView);
                 })}
               </div>
 
-{/* Carousel container */}
-<div className="relative">
+        {/* Carousel container */}
+        <div className="relative">
 
-  {/* Navigation */}
-  <button
-    onClick={prev}
-    disabled={currentIndex === 0}
-    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full glass animated-border border border-transparent hover:border-primary/50 disabled:opacity-0 transition-all duration-300 cursor-pointer"
-  >
-    <ArrowLeft />
-  </button>
+          {/* Navigation */}
+          <button
+            onClick={prev}
+            disabled={currentIndex === 0}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full glass animated-border border border-transparent hover:border-primary/50 disabled:opacity-0 transition-all duration-300 cursor-pointer"
+          >
+            <ArrowLeft />
+          </button>
 
-  <button
-    onClick={next}
-    disabled={currentIndex === maxIndex}
-    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full glass animated-border border border-transparent hover:border-primary/50 disabled:opacity-0 transition-all duration-300 cursor-pointer"
-  >
-    <ArrowRight />
-  </button>
+          <button
+            onClick={next}
+            disabled={currentIndex === maxIndex}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full glass animated-border border border-transparent hover:border-primary/50 disabled:opacity-0 transition-all duration-300 cursor-pointer"
+          >
+            <ArrowRight />
+          </button>
 
-  {/* Viewport */}
-  <div className="overflow-hidden">
+          {/* Viewport */}
+          <div className="overflow-hidden">
 
-{/* Track */}
-<div
-  className="flex transition-transform duration-500 ease-out"
-  style={{
-    transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-  }}
->
-  {filteredProjects.map((project, idx) => (
-    <div
-      key={idx}
-      className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
-      style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-    >
-      <div className="group glass rounded-2xl overflow-hidden animated-border border border-transparent hover:border-primary/50 transition-all duration-300 animate-fade-in h-full">
-
-        {/* Image */}
-        <div className="relative overflow-hidden aspect-video">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-
-          {/* Gradient overlay (NON-BLOCKING) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 pointer-events-none" />
-
-          {/* Overlay link */}
-<div className="absolute inset-0 flex items-end justify-end m-4 transition-opacity duration-300 pointer-events-none">
-  <button
-    onClick={() => {
-      if (project.category === "graphics" || project.category === "thumbnails") {
-        setSelectedProject(project);
-      } else {
-        window.open(project.link, "_blank");
-      }
-    }}
-    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
-  >
-    {project.category === "graphics" || project.category === "thumbnails" ? (
-      <Fullscreen className="w-5 h-5" />
-    ) : (
-      <Link2 className="w-5 h-5" />
-    )}
-  </button>
-</div>
-
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-4">
-          <div className="flex items-start justify-between">
-            <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-              {project.title}
-            </h3>
-            <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-          </div>
-
-          <p className="text-muted-foreground text-sm group-hover:text-white/70 duration-300">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, tagIdx) => (
-              <span
-                key={tagIdx}
-                className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </div>
-  ))}
-</div>
-
-  </div>
-
-  {/* Nav Indicators */}
-<div className="flex justify-center gap-3 mt-10">
-  {Array.from({ length: totalSlides }).map((_, index) => {
-    const slideIndex = index * itemsPerView;
-    const isActive = currentIndex === slideIndex;
-
-    return (
-      <button
-        key={index}
-        onClick={() => setCurrentIndex(slideIndex)}
-        className={`
-          h-2 rounded-full transition-all duration-300 cursor-pointer
-          ${isActive
-            ? "w-8 bg-primary"
-            : "w-2 bg-muted-foreground/40 hover:bg-primary/50"
-          }
-        `}
-        aria-label={`Go to slide ${index + 1}`}
-      />
-    );
-  })}
-</div>
-
-</div>
-
-</div>
-  {selectedProject && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onContextMenu={(e) => e.preventDefault()}>
-      {/* Close on backdrop */}
-      <div
-        className="absolute inset-0"
-        onClick={() => setSelectedProject(null)}
-      />
-        <button
-          onClick={() => setSelectedProject(null)}
-          className="absolute top-3 right-3 text-white text-sm opacity-70 hover:opacity-100 duration-300 cursor-pointer"
+        {/* Track */}
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+          }}
         >
-          <X/>
-        </button>
-      {/* Modal content */}
-      <div className="relative max-w-6xl w-full px-6" onContextMenu={(e) => e.preventDefault()}>
-        
+          {filteredProjects.map((project, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+            >
+              <div className="group glass rounded-2xl overflow-hidden animated-border border border-transparent hover:border-primary/50 transition-all duration-300 animate-fade-in h-full">
 
-        <img
-          src={selectedProject.image}
-          alt={selectedProject.title}
-          className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
-        />
-      </div>
-    </div>
-  )}
+                {/* Image */}
+                <div className="relative overflow-hidden aspect-video">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 no-save"
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    onTouchStart={(e) => e.preventDefault()}
+                  />
+
+                  {/* Gradient overlay (NON-BLOCKING) */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 pointer-events-none" />
+
+                  {/* Overlay link */}
+                  <div className="absolute inset-0 flex items-end justify-end m-4 transition-opacity duration-300 pointer-events-none">
+                    <button
+                      onClick={() => {
+                        if (project.category === "graphics" || project.category === "thumbnails") {
+                          setSelectedProject(project);
+                        } else {
+                          window.open(project.link, "_blank");
+                        }
+                      }}
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer pointer-events-auto"
+                    >
+                      {project.category === "graphics" || project.category === "thumbnails" ? (
+                        <Fullscreen className="w-5 h-5" />
+                      ) : (
+                        <Link2 className="w-5 h-5" />
+                      )}
+                    </button>
+                  </div>
+
+                </div>
+
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+                  </div>
+
+                  <p className="text-muted-foreground text-sm group-hover:text-white/70 duration-300">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIdx) => (
+                      <span
+                        key={tagIdx}
+                        className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+        </div>
+
+        {/* Nav Indicators */}
+        <div className="flex justify-center gap-3 mt-10">
+          {Array.from({ length: totalSlides }).map((_, index) => {
+            const slideIndex = index * itemsPerView;
+            const isActive = currentIndex === slideIndex;
+
+            return (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(slideIndex)}
+                className={`
+                  h-2 rounded-full transition-all duration-300 cursor-pointer
+                  ${isActive
+                    ? "w-8 bg-primary"
+                    : "w-2 bg-muted-foreground/40 hover:bg-primary/50"
+                  }
+                `}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            );
+          })}
+        </div>
+
+        </div>
+
+        </div>
+          {selectedProject && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm" onContextMenu={(e) => e.preventDefault()}>
+              {/* Close on backdrop */}
+              <div
+                className="absolute inset-0"
+                onClick={() => setSelectedProject(null)}
+              />
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-3 right-3 text-white text-sm opacity-70 hover:opacity-100 duration-300 cursor-pointer"
+                >
+                  <X/>
+                </button>
+              {/* Modal content */}
+              <div className="relative max-w-6xl w-full px-6" onContextMenu={(e) => e.preventDefault()}>
+
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl no-save"
+                  draggable={false}
+                  onDragStart={(e) => e.preventDefault()}
+                  onTouchStart={(e) => e.preventDefault()}
+                />
+              </div>
+            </div>
+          )}
 
         </section>
         

@@ -173,3 +173,9 @@
     0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
+
+.no-save {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
